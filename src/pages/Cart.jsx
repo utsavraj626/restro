@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { removeFromCart, clearCart, addToCart } from '../Redux/cartSlices';
+import { removeFromCart, clearCart, addToCart, decrementQuantity } from '../Redux/cartSlices'; // Import `decrementQuantity`
 
 const Cart = () => {
   const { cartItems, totalQuantity, totalPrice } = useSelector((state) => state.cart);
@@ -37,14 +37,15 @@ const Cart = () => {
                 {/* Right component: Price and order actions */}
                 <div className="right-component flex flex-col items-end space-y-4">
                   <div className="flex items-center space-x-2">
-                    {/* Button for incrementing and decrementing quantity */}
+                    {/* Decrement button */}
                     <button
                       className="bg-pink-500 text-white py-1 px-3 rounded-lg hover:bg-pink-600 transition"
-                      onClick={() => dispatch(removeFromCart(item))}
+                      onClick={() => dispatch(decrementQuantity(item))}
                     >
                       -
                     </button>
                     <span className="text-lg font-semibold">{item.quantity}</span>
+                    {/* Increment button */}
                     <button
                       className="bg-pink-500 text-white py-1 px-3 rounded-lg hover:bg-pink-600 transition"
                       onClick={() => dispatch(addToCart(item))}
