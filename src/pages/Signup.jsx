@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signUp } from '../services/operation/authApi';
+import { useNavigate } from "react-router-dom";
 
 const SignupPage = () => {
+  const dispatch = useDispatch(); // Move inside the component
+  const navigate = useNavigate(); // Move inside the component
+
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -13,9 +19,14 @@ const SignupPage = () => {
       setError('Please fill in all fields.');
       return;
     }
-    // Proceed with signup (e.g., call an API)
+    
+    // Proceed with signup logic (e.g., call an API)
     setError('');
-    // Add your signup logic here
+    
+    // Dispatch signup action
+    dispatch(signUp(name, email, password, navigate));
+
+    console.log(name);
   };
 
   return (

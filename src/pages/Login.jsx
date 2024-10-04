@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { login } from '../services/operation/authApi'; // Import the login function from authApi
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
-    // For example, validate inputs or send them to an API
+
+    // Validate inputs
     if (!email || !password) {
       setError('Please fill in both fields.');
       return;
     }
-    // Proceed with login (e.g., call an API)
+
+    // Dispatch login action
+    dispatch(login(email, password, navigate));
+
+    // Clear error after successful login
     setError('');
-    // Add your login logic here
   };
 
   return (
