@@ -50,7 +50,7 @@ const Card = ({ food }) => {
 
           {/* Price and Add to Cart Button */}
           <div className="flex justify-between items-center">
-            <p className="text-lg font-bold text-gray-800">₹{food.price}</p>
+            <p className="text-lg font-bold text-gray-800 mb-4">₹{food.price}</p>
             <button
               className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 focus:outline-none transition"
               onClick={handleAddToCart} // Add to Cart functionality

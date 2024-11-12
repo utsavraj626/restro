@@ -25,7 +25,7 @@ const AboutUs = () => {
         {/* Owner Description */}
         <section className="bg-white shadow-md rounded-lg overflow-hidden p-8 flex flex-col md:flex-row items-center md:items-start">
           <img
-            src="dp of utsav.jpeg"
+            src="#"
             alt="Owner"
             className="w-64 h-64 object-cover rounded-full shadow-lg mb-6 md:mb-0 md:mr-8"
           />
@@ -34,7 +34,7 @@ const AboutUs = () => {
               Meet the Owner
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Utsav Raj, the visionary behind Foodio, has always been passionate about food and hospitality. With over 10 years of experience in the culinary world, Raj has worked with some of the best chefs and restaurants globally. His dream was to create a place where food lovers can come together to enjoy delicious, thoughtfully prepared meals in a welcoming environment.
+              Rahul Yadav, the visionary behind Foodio, has always been passionate about food and hospitality. With over 10 years of experience in the culinary world, Rahul has worked with some of the best chefs and restaurants globally. His dream was to create a place where food lovers can come together to enjoy delicious, thoughtfully prepared meals in a welcoming environment.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mt-4">
               "Foodio is not just a restaurant; it’s a place where we celebrate flavors, culture, and community. We believe in using fresh, locally sourced ingredients and preparing everything from scratch, ensuring that each dish is bursting with authentic flavors and crafted with love."
